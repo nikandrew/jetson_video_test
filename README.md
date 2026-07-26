@@ -21,8 +21,11 @@ Raspberry Pi HQ Camera 1.0 использует сенсор **Sony IMX477**. О
 sudo apt update
 sudo apt install -y build-essential cmake pkg-config libgstreamer1.0-dev
 
-cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
-cmake --build build -j2
+mkdir -p build
+cd build
+cmake -DCMAKE_BUILD_TYPE=Release ..
+make -j2
+cd ..
 ```
 
 Компоненты `nvarguscamerasrc`, `nvvidconv`, `nvegltransform` и
